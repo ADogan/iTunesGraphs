@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>iTunes Graphs</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css" />    
+    <script type="text/javascript" src="lib/js/angular/angular.min.js"></script>
+    <script type="text/javascript" src="lib/js/angular/angular-route.min.js" ></script>
+    <script type="text/javascript" src="js/main.js" ></script>
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    
+    
+        <script src="filter_js/modernizr.custom-2.6.2.min.js"></script>
+    <script src="filter_js/jquery-1.11.1.min.js"></script>
+    <script src="filter_js/jquery.shuffle-3.1.1.min.js"></script>
+    
+    <script src="filter_js/index.js"></script>
+    <link href="style/filter_main.css" media="screen" rel="stylesheet" type="text/css">
+    
+  </head>
+  <body ng-app="mainApp">
+    
+    <center>
+      <div id="piechart" style="width: 100%; height: 600px;"></div>
+    </center>
+    
+
+    
+    
+    
+    <div ng-controller="ituneschartctrl">
+      <h2>Here are some Apps in the top 200:</h2>
+      <ul class="postlist" >
+        <li ng-repeat="post in posts" class="card" ng-if="post.category.attributes.label != 'Games' && post.category.attributes.label != 'Social Networking'">
+          
+          {{ $index + 1}}: 
+          {{post['im:name'].label | limitTo : 90 }}<br>
+          <img ng-src="{{post['im:image'][0].label}}">
+          <br>
+          <small>{{post.category.attributes.label}}</small>
+        </li>
+      </ul>
+    
+        <div class="filter-options row">
+          <div class="span6">
+            <div class="filter-group filter--shapes js-shapes">
+              <h5 class="filter-group__label">Categories</h5>
+              {{dataAsArray}}
+              <span class="ib" ng-repeat="category in dataAsArray">
+                <input type="checkbox" value="circle" id="cb-circle"> <label for="cb-circle">{{category}}</label>
+              </span>
+            </div>
+          </div>
+
+        </div>
+      
+    
+    </div>
+    
+    
+    
+  </body>
+</html>

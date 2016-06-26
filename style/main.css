@@ -1,0 +1,26 @@
+      body {
+        font-family: Roboto, Arial, sans-serif;
+/*        background: #ECEFF1;*/
+        color: rgba(60,90,0,0.87);
+      }
+
+      a {
+        color: rgb(3,155,229);
+      }
+      .postlist {
+        list-style: none;
+      }
+      .card {
+        width:200px;
+        height: 200px;
+        border:2px solid gray;
+        border-radius: 5px;
+        padding:10px;
+        float:left;
+        margin:10px;
+      }
+      .card:hover {
+        background-color:beige;
+        border:2px solid black;
+        box-shadow: 10px solid black;
+      }
