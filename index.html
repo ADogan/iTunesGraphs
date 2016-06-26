@@ -26,7 +26,9 @@
     </center>
         
     <div ng-controller="ituneschartctrl">
-      <h2>Here are some Apps in the top 200:</h2>
+      <center>
+        <h2>Here are some Apps in the top 200:</h2>
+      </center>
       <ul class="postlist" >
         <li ng-repeat="post in posts" class="card" ng-if="post.category.attributes.label != 'Games' && post.category.attributes.label != 'Social Networking'">
           
@@ -38,6 +40,7 @@
         </li>
       </ul>
     
+<!--
         <div class="filter-options row">
           <div class="span6">
             <div class="filter-group filter--shapes js-shapes">
@@ -51,6 +54,7 @@
 
         </div>
       
+-->
     
     </div>
     
