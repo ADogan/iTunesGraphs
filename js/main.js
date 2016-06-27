@@ -20,7 +20,7 @@ app.controller("ituneschartctrl", function($scope, $http){
   success(function(data, status, headers, config) {
     $scope.posts = data.feed.entry;
     $scope.i = 0;
-    
+    console.log(data.feed);
     loadChart(data.feed);
     $scope.done = true;
   }).
