@@ -35,7 +35,7 @@
         <li ng-repeat="post in posts" class="card" ng-if="post.category.attributes.label != 'Games' && post.category.attributes.label != 'Social Networking'">
           
           {{ $index + 1}}: 
-          <a ng-href="{{post.link.attributes.href}}">{{post['im:name'].label | limitTo : 90 }}<br>
+          <a ng-href="{{post.link.attributes.href}}">{{post['im:name'].label | limitTo : 90 }} - {{post['im:price'].attributes.currency}} {{post['im:price'].attributes.amount | currency}}<br>
           <img ng-src="{{post['im:image'][0].label}}"></a>
           <br>
           <small>{{post.category.attributes.label}}</small>
